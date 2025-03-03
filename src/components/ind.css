@@ -1,0 +1,208 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.h1{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 24px;
+    margin: 20px;
+    text-align: center;
+    color:#FFFFFF
+}
+
+.form {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: linear-gradient(45deg, #1785b2, #0ecc0e);
+    padding: 30px;
+    width: 550px;
+    border-radius: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    transition: background 0.3s ease;
+}
+
+.form:hover {
+    background: linear-gradient(45deg, #4545ea, skyblue);
+}
+
+::placeholder {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.form button {
+    align-self: flex-end;
+}
+
+.flex-column , label {
+    color: white;
+    font-weight: 600;
+}
+.inputForm {
+    border: 1.5px solid #ecedec; /* Borde del contenedor */
+    border-radius: 10em; /* Bordes redondeados */
+    height: 40px; /* Altura del contenedor */
+    display: flex; /* Flexbox para centrar contenido */
+    align-items: center; /* Centra verticalmente */
+    padding-left: 10px; /* Espacio interno a la izquierda */
+    transition: 0.2s ease-in-out; /* Transición suave */
+    background-color: white; /* Color de fondo */
+    color:black;
+}
+
+/* Estilo general para inputs y select */
+.input, .input select {
+    margin-left: 10px;
+    border-radius: 10rem;
+    border: none;
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    background-color: white;
+}
+
+/* Foco en el input */
+.input:focus {
+    outline: none; /* Sin contorno por defecto */
+}
+
+/* Foco en el contenedor cuando hay un input enfocado */
+.inputForm:focus-within {
+    border: 1.5px solid #dc47dc; /* Cambia el borde a naranja al enfocar */
+}
+
+/* Estilos adicionales para el select */
+.input select {
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+/* Ocultar flechas del select en navegadores modernos */
+.input select::-ms-expand {
+    display: none; /* Oculta la flecha en IE y Edge */
+}
+
+/*.inputForm {
+    border: 1.5px solid #ecedec;
+    border-radius: 10em;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    transition: 0.2s ease-in-out;
+    background-color: white;
+}
+
+.input {
+    margin-left: 10px;
+    border-radius: 10rem;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.inputForm:focus-within {
+    border: 1.5px solid orange;
+}*/
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.flex-row > div > label {
+    font-size: 14px;
+    color: #ece9e9;
+    font-weight: 400;
+}
+
+.span {
+    font-size: 14px;
+    margin-left: 5px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.button-submit {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    background: transparent;
+    transition: ease-out 0.5s;
+    border: 2px solid;
+    border-radius: 10em;
+    box-shadow: inset 0 0 0 0 blue;
+    margin: 20px 0 10px 0;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.button-submit:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 royalblue;
+}
+
+.button-submit:active {
+    transform: scale(0.9);
+}
+
+.p {
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.btn {
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    gap: 10px;
+    border: 1px solid #ededef;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+    border: 1px solid orange;
+}
+.chart-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: #FFFFFF;
+    border: 1px solid #ededef;
+    border-radius: 15px;
+    background-color: #ffffff;
+}
