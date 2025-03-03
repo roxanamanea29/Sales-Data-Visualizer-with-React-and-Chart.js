@@ -1,15 +1,26 @@
-import { useState, useEffect, useRef } from "react";
-import Chart from "chart.js/auto";
-import ChartDataLabels from "chartjs-plugin-datalabels";
-import "./ind.css";
+import { useState, useEffect, useRef } from "react";//importa los hooks de react
+import Chart from "chart.js/auto";//importa el componente Chart de chart.js
+import ChartDataLabels from "chartjs-plugin-datalabels";//importa el componente ChartDataLabels de chart.js
+import "./SalesChart.css";//importa el css de ind
 
 const SalesSimulator = () => {
     const [month, setMonth] = useState("");
-    const [salesAmount, setSalesAmount] = useState("");
-    const [chartType, setChartType] = useState("bar");
-    const [salesData, setSalesData] = useState([]);
-    const chartRef = useRef(null);
-    let chartInstance = useRef(null);
+    const [salesAmount, setSalesAmount] = useState("");// Monto de ventas
+    const [chartType, setChartType] = useState("bar");// Tipo de gráfico
+    const [salesData, setSalesData] = useState([]);// Datos de ventas
+    const chartRef = useRef(null);// Referencia al canvas del gráfico
+    let chartInstance = useRef(null); // Instancia del gráfico Chart.js
+
+    // Exportar datos a JSON
+    const exportToJSON = () => {
+        const json = JSON.stringify(salesData, null, 2);// Convierte los datos a JSON
+        const blob = new Blob([json], { type: "application/json" });// Crea un blob con los datos
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");// Crea un enlace
+        a.href = url;
+        a.download = "ventas.json";// el nombre del archivo
+        a.click();// Simula un clic en el enlace
+    };
 
     // Cargar datos guardados en localStorage al inicio
     useEffect(() => {
@@ -89,7 +100,7 @@ const SalesSimulator = () => {
         });
     };
 
-    // Resetear gráfico y datos
+    // Resetea el gráfico y los datos
     const resetChart = () => {
         setSalesData([]);
         localStorage.removeItem("salesData");
@@ -128,13 +139,19 @@ const SalesSimulator = () => {
                     <canvas ref={chartRef} width="100%"></canvas>
                 </div>
 
-                {/* Botón para resetear gráfico */}
+                {/* Botón para resetear los gráfico */}
                 <button type="button" onClick={resetChart} className="button-submit">Resetear Gráfico</button>
-            </form>U
+
+                {/* Botón para exportar los datos */}
+                <button type="button" onClick={exportToJSON} className="button-submit">Exportar a JSON</button>
+
+            </form>
 
         </div>
     );
 };
+
+// Colores para el gráfico
 const colors = {
     background: [
         'rgba(75, 192, 192, 0.2)',  // Verde agua

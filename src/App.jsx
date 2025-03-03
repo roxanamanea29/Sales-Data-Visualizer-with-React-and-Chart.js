@@ -1,6 +1,6 @@
 
 import './App.css'
-import Ind from "./components/Ind.jsx";
+import Ind from "./components/SalesChart.jsx";
 
 function App() {
 
